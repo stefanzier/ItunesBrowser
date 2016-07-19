@@ -7,9 +7,10 @@ export default StyleSheet.create({
   
   content: {
     flex: 1,
-    backgroundColor: '#CCC',
+    backgroundColor: '#EFEFEF',
+    paddingTop: 65
   },
-  
+
   appearance: {
     backgroundColor: '#2A3744',
     paddingTop: 30,
@@ -28,5 +29,18 @@ export default StyleSheet.create({
     width: 50,
     color: '#FEFEFE',
     textAlign: 'center'
+  },
+
+  searchBar: {
+    padding: 3,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF'
+  },
+
+  searchBarInput: {
+    fontSize: 15,
+    flex: 1,
+    height: 30
   }  
 });

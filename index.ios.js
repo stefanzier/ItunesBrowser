@@ -10,28 +10,36 @@ import {
   View,
   Text,
   StyleSheet,
-  StatusBar  
+  StatusBar,
+  NavigatorIOS,
+  AlertIOS 
 } from 'react-native';
 
 import styles from './styles';
 
+import MediaListView from './media_list_view';
+
+// Settings StatusBar color
+StatusBar.barStyle = 'light-content';
+
+
 class ItunesBrowser extends Component {
   render() {
     return (
-      <View style={styles.mainContainer}>
-        <StatusBar barStyle="light-content" />
-        <View style={styles.appearance}>
-          <Text style={styles.button}></Text>
-          <Text style={styles.title}>ItunesBrowser</Text>
-          <Text style={styles.button}>Search</Text>
-        </View>        
-
-        <View style={styles.content}>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, sint ipsa? Soluta culpa ea velit recusandae quos dolores iste assumenda ipsum cupiditate sunt neque ducimus, nisi fugit cumque dignissimos nam.
-          </Text>
-        </View>
-      </View>
+      <NavigatorIOS
+        style={styles.mainContainer}
+        barTintColor = "#2A3744"
+        tintColor="#EFEFEF"
+        titleTextColor="#EFEFEF"
+        initialRoute={{
+          component: MediaListView,
+          title: 'iTunesBrowser',
+          rightButtonTitle: 'Search',
+          onRightButtonPress: () => AlertIOS.prompt(
+              'Search', 'you pressed the search button'
+            )
+        }}
+      />
     );
   }
 }
