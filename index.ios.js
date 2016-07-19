@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -15,13 +9,14 @@ import {
   AlertIOS 
 } from 'react-native';
 
+// Styles
 import styles from './styles';
 
+// Components
 import MediaListView from './media_list_view';
 
 // Settings StatusBar color
 StatusBar.barStyle = 'light-content';
-
 
 class ItunesBrowser extends Component {
   render() {
